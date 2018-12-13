@@ -127,6 +127,49 @@ func NewMatrix(r, c int, data []float64) Matrix {
 	return A
 }
 
+//一维切片转为矩阵(列向量)
+func Slices1ToMatrix(s []float64) Matrix {
+	A := ZeroMatrix(len(s), 1)
+	for i := 0; i < A.Rows; i++ {
+		A.Data[i] = s[i]
+	}
+	return A
+}
+
+//二维切片转为矩阵
+func Slices2ToMatrix(s [][]float64) Matrix {
+	row := len(s)
+	col := len(s[0])
+	A := ZeroMatrix(row, col)
+	for i := 0; i < row; i++ {
+		for j := 0; j < col; j++ {
+			A.SetMatrix(i, j, s[i][j])
+		}
+	}
+	return A
+}
+
+//列向量转为一维切片
+func Matrix1ToSlices(A Matrix) []float64 {
+	s := make([]float64, A.Rows)
+	for i := 0; i < A.Rows; i++ {
+		s[i] = A.Data[i]
+	}
+	return s
+}
+
+//二维矩阵转为二维切片
+func Matrix2ToSlices(A Matrix) [][]float64 {
+	s := make([][]float64, A.Rows)
+	for i := 0; i < A.Rows; i++ {
+		s[i] = make([]float64, A.Columns)
+		for j := 0; j < A.Columns; j++ {
+			s[i][j] = A.GetFromMatrix(i, j)
+		}
+	}
+	return s
+}
+
 //矩阵运算------------------------------------------+
 //矩阵相加
 func AddMatrix(A, B Matrix) Matrix {
