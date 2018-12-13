@@ -46,11 +46,11 @@ func Asind(y float64) float64 {
 }
 
 //反余弦的角度
-func Cosd(y float64) float64 {
+func Acosd(y float64) float64 {
 	return 180.0 * math.Acos(y) / math.Pi
 }
 
 //反正切的角度
-func Tand(y float64) float64 {
+func Atand(y float64) float64 {
 	return 180.0 * math.Atan(y) / math.Pi
 }
