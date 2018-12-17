@@ -43,7 +43,7 @@ func RK44(fun func(Matrix, int) float64, x0 Matrix, xend float64, fn, n int) (Ma
 	*/
 	//判断方程个数是否对应初值个数
 	if x0.Rows != fn+1 {
-		panic("Error in goNum.RK44: Quantities of x0 and fn are not equal")
+		panic("Error in goNum.RK44: Quantities of x0 and fn+1 are not equal")
 	}
 
 	sol := ZeroMatrix(fn+1, n+1)
