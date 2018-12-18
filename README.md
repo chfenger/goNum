@@ -24,16 +24,16 @@ Linux或者Windows
 
 安装方法
 ========
-## 0. 在线安装
-0.0. 安装go;
-0.1. 运行go get命令:
+## 在线安装
+1. 安装go;
+2. 运行go get命令:
 ```go
 go get github.com/chfenger/goNum
 ```
-## 1. 下载源码安装
-1.0. 下载源代码，并解压到指定文件夹（例如“UserDir”）下的src目录或其子目录（例如“UserDir/src/”或“UserDir/src/xxx/xxx/”）下;
-1.1. 添加UserDir到GOPATH;
-1.2. 重启IDE或终端即可。
+## 下载源码安装
+1. 下载源代码，并解压到指定文件夹（例如“UserDir”）下的src目录或其子目录（例如“UserDir/src/”或“UserDir/src/xxx/xxx/”）下;
+2. 添加UserDir到GOPATH;
+3. 重启IDE或终端即可。
 
 算法
 ====
