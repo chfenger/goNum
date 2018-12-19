@@ -161,9 +161,9 @@ func RKF45(fun func(goNum.Matrix, int) float64, x0 goNum.Matrix, xend, tol float
 		}
 
 		//最大步数强边界
-		// if i > n {
-		// 	break
-		// }
+		if i > n {
+			break
+		}
 
 		//变步长
 		scale := tol * h / (2.0 * math.Abs(errtemp0))
