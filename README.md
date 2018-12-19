@@ -111,6 +111,7 @@ go get github.com/chfenger/goNum
   - 梯形法（ODE）
   - 二级二阶Runge-Kutta法
   - 四级四阶Runge-Kutta法
+  - 四阶Runge-Kutta-Felhberg变步长法
 
 许可证书
 ========
