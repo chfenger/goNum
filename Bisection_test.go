@@ -15,7 +15,7 @@
     N       步数上限
     tol     误差上限
 输出   :
-    sol     解值，指针
+    sol     解值
     err     解出标志：false-未解出或达到步数上限；
                      true-全部解出
 ------------------------------------------------------
@@ -28,7 +28,7 @@ import (
 	"testing"
 )
 
-func Bisection(fn func(float64) float64, a, b float64, N int, tol float64) (*float64, bool) {
+func Bisection(fn func(float64) float64, a, b float64, N int, tol float64) (float64, bool) {
 	/*
 		用二分法来求解连续、单自变量、单调函数（区间内）指定有限区间上的解
 		输入   :
@@ -37,7 +37,7 @@ func Bisection(fn func(float64) float64, a, b float64, N int, tol float64) (*flo
 		    N       步数上限
 		    tol     误差上限
 		输出   :
-		    sol     解值，指针
+		    sol     解值
 		    err     解出标志：false-未解出或达到步数上限；
 		                     true-全部解出
 	*/
@@ -46,7 +46,7 @@ func Bisection(fn func(float64) float64, a, b float64, N int, tol float64) (*flo
 
 	//判断在[a,b]区间是否有解
 	if (fn(a) > 0 && fn(b) > 0) || (fn(a) < 0 && fn(b) < 0) {
-		return &sol, err
+		return sol, err
 	}
 
 	//求解
@@ -55,7 +55,7 @@ func Bisection(fn func(float64) float64, a, b float64, N int, tol float64) (*flo
 		//解出
 		if math.Abs(fn(sol)) < tol {
 			err = true
-			return &sol, err
+			return sol, err
 		}
 		//未解出，重置区间边界
 		switch {
@@ -68,10 +68,10 @@ func Bisection(fn func(float64) float64, a, b float64, N int, tol float64) (*flo
 		case fn(sol) > 0 && fn(b) < 0:
 			a = sol
 		default:
-			return &sol, err
+			return sol, err
 		}
 	}
-	return &sol, err
+	return sol, err
 }
 
 func BenchmarkBisection(b *testing.B) {

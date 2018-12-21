@@ -19,7 +19,7 @@
     N       步数上限
     tol     误差上限
 输出   :
-    sol     解值，指针
+    sol     解值
     err     解出标志：false-未解出或达到步数上限；
                      true-全部解出
 ------------------------------------------------------
@@ -31,7 +31,7 @@ import (
 	"math"
 )
 
-func Secant1P(fn, fn2 func(float64) float64, a, b float64, N int, tol float64) (*float64, bool) {
+func Secant1P(fn, fn2 func(float64) float64, a, b float64, N int, tol float64) (float64, bool) {
 	/*
 		单点弦截法求解方程 f(x)=0 在区间[a, b]内的根
 		输入   :
@@ -41,7 +41,7 @@ func Secant1P(fn, fn2 func(float64) float64, a, b float64, N int, tol float64) (
 		    N       步数上限
 		    tol     误差上限
 		输出   :
-		    sol     解值，指针
+		    sol     解值
 		    err     解出标志：false-未解出或达到步数上限；
 		                     true-全部解出
 	*/
@@ -50,7 +50,7 @@ func Secant1P(fn, fn2 func(float64) float64, a, b float64, N int, tol float64) (
 
 	//判断a b的次序以及选取初值
 	if b < a {
-		return &sol, err
+		return sol, err
 	}
 	switch {
 	// a
@@ -60,11 +60,11 @@ func Secant1P(fn, fn2 func(float64) float64, a, b float64, N int, tol float64) (
 			// 求解成功
 			if math.Abs(sol-b) < tol {
 				err = true
-				return &sol, err
+				return sol, err
 			}
 			b = sol
 		}
-		return &sol, err
+		return sol, err
 	// b
 	case fn(b)*fn2(b) > 0:
 		for i := 0; i < N; i++ {
@@ -72,11 +72,11 @@ func Secant1P(fn, fn2 func(float64) float64, a, b float64, N int, tol float64) (
 			// 求解成功
 			if math.Abs(sol-a) < tol {
 				err = true
-				return &sol, err
+				return sol, err
 			}
 			a = sol
 		}
-		return &sol, err
+		return sol, err
 	}
-	return &sol, err
+	return sol, err
 }

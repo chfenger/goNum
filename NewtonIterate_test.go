@@ -23,7 +23,7 @@
     N       步数上限
     tol     误差上限
 输出   :
-    sol     解值，指针
+    sol     解值
     err     解出标志：false-未解出或达到步数上限；
                      true-全部解出
 ------------------------------------------------------
@@ -36,7 +36,7 @@ import (
 	"testing"
 )
 
-func NewtonIterate(fn, fn1 func(float64) float64, a, b, c float64, N int, tol float64) (*float64, bool) {
+func NewtonIterate(fn, fn1 func(float64) float64, a, b, c float64, N int, tol float64) (float64, bool) {
 	/*
 		牛顿迭代求解非线性方程 f(x)=0 在区间[a, b]内的根
 		输入   :
@@ -47,7 +47,7 @@ func NewtonIterate(fn, fn1 func(float64) float64, a, b, c float64, N int, tol fl
 		    N       步数上限
 		    tol     误差上限
 		输出   :
-		    sol     解值，指针
+		    sol     解值
 		    err     解出标志：false-未解出或达到步数上限；
 		                     true-全部解出
 	*/
@@ -59,15 +59,15 @@ func NewtonIterate(fn, fn1 func(float64) float64, a, b, c float64, N int, tol fl
 	case math.Abs(fn(a)) < tol:
 		sol = a
 		err = true
-		return &sol, err
+		return sol, err
 	case math.Abs(fn(b)) < tol:
 		sol = b
 		err = true
-		return &sol, err
+		return sol, err
 	case math.Abs(fn(c)) < tol:
 		sol = c
 		err = true
-		return &sol, err
+		return sol, err
 	}
 
 	//求解
@@ -75,12 +75,12 @@ func NewtonIterate(fn, fn1 func(float64) float64, a, b, c float64, N int, tol fl
 	for i := 0; i < N; i++ {
 		if math.Abs(sol-c) < tol {
 			err = true
-			return &sol, err
+			return sol, err
 		}
 		c = sol
 		sol = c - fn(c)/fn1(c)
 	}
-	return &sol, err
+	return sol, err
 }
 
 func BenchmarkNewtonIterate(b *testing.B) {

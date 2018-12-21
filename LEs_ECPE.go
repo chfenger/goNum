@@ -18,7 +18,7 @@
     a       a x = b线性代数方程组的系数矩阵
     b       a x = b线性代数方程组的右侧常数列向量
 输出   :
-    sol     解值，指针
+    sol     解值
     err     解出标志：false-未解出或达到步数上限；
                      true-全部解出
 ------------------------------------------------------
@@ -26,14 +26,14 @@
 
 package goNum
 
-func LEs_ECPE(a [][]float64, b []float64) (*[]float64, bool) {
+func LEs_ECPE(a [][]float64, b []float64) ([]float64, bool) {
 	/*
 		线性代数方程组的列主元消去法
 		输入   :
 		    a       a x = b线性代数方程组的系数矩阵
 		    b       a x = b线性代数方程组的右侧常数列向量
 		输出   :
-		    sol     解值，指针
+		    sol     解值
 		    err     解出标志：false-未解出或达到步数上限；
 		                     true-全部解出
 	*/
@@ -48,7 +48,7 @@ func LEs_ECPE(a [][]float64, b []float64) (*[]float64, bool) {
 
 	// 输入判断
 	if len(atemp) != n {
-		return &sol, err
+		return sol, err
 	}
 
 	//求解
@@ -91,5 +91,5 @@ func LEs_ECPE(a [][]float64, b []float64) (*[]float64, bool) {
 
 	//返回结果
 	err = true
-	return &sol, err
+	return sol, err
 }

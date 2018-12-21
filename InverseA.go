@@ -13,7 +13,7 @@
 输入   :
     a       矩阵
 输出   :
-    sol     解值，指针
+    sol     解值
     err     解出标志：false-未解出或达到步数上限；
                      true-全部解出
 ------------------------------------------------------
@@ -21,13 +21,13 @@
 
 package goNum
 
-func InverseA(a [][]float64) (*[][]float64, bool) {
+func InverseA(a [][]float64) ([][]float64, bool) {
 	/*
 		求矩阵逆的列主元消去法
 		输入   :
 		    a       矩阵
 		输出   :
-		    sol     解值，指针
+		    sol     解值
 		    err     解出标志：false-未解出或达到步数上限；
 		                     true-全部解出
 	*/
@@ -35,13 +35,13 @@ func InverseA(a [][]float64) (*[][]float64, bool) {
 	var err bool = false
 	n := len(a)
 	temp0, _ := E_Mat(n)
-	b := *temp0
+	b := temp0
 	sol := b
 	temp1 := make([]float64, n)
 
 	//判断是否方阵
 	if len(a) != len(a[0]) {
-		return &sol, err
+		return sol, err
 	}
 
 	//主元消去
@@ -82,5 +82,5 @@ func InverseA(a [][]float64) (*[][]float64, bool) {
 
 	sol = b
 	err = true
-	return &sol, err
+	return sol, err
 }

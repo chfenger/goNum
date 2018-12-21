@@ -21,7 +21,7 @@
     N       步数上限
     tol     误差上限
 输出   :
-    sol     解值，指针
+    sol     解值
     err     解出标志：false-未解出或达到步数上限；
                      true-全部解出
 ------------------------------------------------------
@@ -34,7 +34,7 @@ import (
 	"testing"
 )
 
-func Secant2P(fn func(float64) float64, a, b float64, N int, tol float64) (*float64, bool) {
+func Secant2P(fn func(float64) float64, a, b float64, N int, tol float64) (float64, bool) {
 	/*
 		双点弦截法求解方程 f(x)=0 在区间[a, b]内的根
 		输入   :
@@ -43,7 +43,7 @@ func Secant2P(fn func(float64) float64, a, b float64, N int, tol float64) (*floa
 		    N       步数上限
 		    tol     误差上限
 		输出   :
-		    sol     解值，指针
+		    sol     解值
 		    err     解出标志：false-未解出或达到步数上限；
 		                     true-全部解出
 	*/
@@ -52,7 +52,7 @@ func Secant2P(fn func(float64) float64, a, b float64, N int, tol float64) (*floa
 
 	//判断a b的次序
 	if (b < a) || (fn(a)*fn(b) > 0) {
-		return &sol, err
+		return sol, err
 	}
 	// 求解
 	sol = (a*fn(b) - b*fn(a)) / (fn(b) - fn(a))
@@ -60,10 +60,10 @@ func Secant2P(fn func(float64) float64, a, b float64, N int, tol float64) (*floa
 		//判断是否解得
 		if (fn(a)*fn(sol) > 0) && (math.Abs(sol-a) < tol) {
 			err = true
-			return &sol, err
+			return sol, err
 		} else if (fn(a)*fn(sol) < 0) && (math.Abs(sol-b) < tol) {
 			err = true
-			return &sol, err
+			return sol, err
 		}
 		//下一步
 		switch {
@@ -74,7 +74,7 @@ func Secant2P(fn func(float64) float64, a, b float64, N int, tol float64) (*floa
 		}
 		sol = (a*fn(b) - b*fn(a)) / (fn(b) - fn(a))
 	}
-	return &sol, err
+	return sol, err
 }
 
 func BenchmarkSecant2P(b *testing.B) {

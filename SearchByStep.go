@@ -14,7 +14,7 @@
     N       步数，区间细分粒度
     tol     误差上限
 输出   :
-    sol     解值，切片指针
+    sol     解值
     err     解出标志：false-未全部解出；true-全部解出
 ------------------------------------------------------
 */
@@ -22,7 +22,7 @@ package goNum
 
 import "math"
 
-func SearchByStep(fn func(float64) float64, a, b float64, N int, tol float64) (*[]float64, bool) {
+func SearchByStep(fn func(float64) float64, a, b float64, N int, tol float64) ([]float64, bool) {
 	/*
 		搜索法来求解连续、单自变量函数指定有限区间上的解
 		输入   :
@@ -31,7 +31,7 @@ func SearchByStep(fn func(float64) float64, a, b float64, N int, tol float64) (*
 		    N       步数，区间细分粒度
 		    tol     误差上限
 		输出   :
-		    sol     解值，切片指针
+		    sol     解值
 		    err     解出标志：false-未全部解出；true-全部解出
 	*/
 	//初始化
@@ -63,7 +63,7 @@ func SearchByStep(fn func(float64) float64, a, b float64, N int, tol float64) (*
 			//循环超过一定数
 			if Nn > 1000 {
 				err = false
-				return &sol, err
+				return sol, err
 			}
 
 			h = (ab1[i] - ab0[i]) / float64(N)
@@ -88,5 +88,5 @@ func SearchByStep(fn func(float64) float64, a, b float64, N int, tol float64) (*
 	}
 	//返回
 	err = true
-	return &sol, err
+	return sol, err
 }

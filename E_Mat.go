@@ -10,7 +10,7 @@
 输入   :
     n       阶数
 输出   :
-    sol     解值，指针
+    sol     解值
     err     解出标志：false-未解出或达到步数上限；
                      true-全部解出
 ------------------------------------------------------
@@ -18,13 +18,13 @@
 
 package goNum
 
-func E_Mat(n int) (*[][]float64, bool) {
+func E_Mat(n int) ([][]float64, bool) {
 	/*
 		返回n阶单位矩阵
 		输入   :
 		    n       阶数
 		输出   :
-		    sol     解值，指针
+		    sol     解值
 		    err     解出标志：false-未解出或达到步数上限；
 		                     true-全部解出
 	*/
@@ -46,5 +46,5 @@ func E_Mat(n int) (*[][]float64, bool) {
 	}
 
 	err = true
-	return &sol, err
+	return sol, err
 }

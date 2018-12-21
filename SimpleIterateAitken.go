@@ -30,7 +30,7 @@ Aitken boost method
     N       步数上限
     tol     误差上限
 输出   :
-    sol     解值，指针
+    sol     解值
     err     解出标志：false-未解出或达到步数上限；
                      true-全部解出
 ------------------------------------------------------
@@ -42,7 +42,7 @@ import (
 	"math"
 )
 
-func SimpleIterateAitken(fn func(float64) float64, a, b, c float64, N int, tol float64) (*float64, bool) {
+func SimpleIterateAitken(fn func(float64) float64, a, b, c float64, N int, tol float64) (float64, bool) {
 	/*
 		简单迭代求解类x=g(x)方程的解 xn+1=g(xn)
 		输入   :
@@ -52,7 +52,7 @@ func SimpleIterateAitken(fn func(float64) float64, a, b, c float64, N int, tol f
 		    N       步数上限
 		    tol     误差上限
 		输出   :
-		    sol     解值，指针
+		    sol     解值
 		    err     解出标志：false-未解出或达到步数上限；
 		                     true-全部解出
 	*/
@@ -64,15 +64,15 @@ func SimpleIterateAitken(fn func(float64) float64, a, b, c float64, N int, tol f
 	case math.Abs(fn(a)-a) < tol:
 		sol = a
 		err = true
-		return &sol, err
+		return sol, err
 	case math.Abs(fn(b)-b) < tol:
 		sol = b
 		err = true
-		return &sol, err
+		return sol, err
 	case math.Abs(fn(c)-c) < tol:
 		sol = c
 		err = true
-		return &sol, err
+		return sol, err
 	}
 
 	//求解
@@ -82,12 +82,12 @@ func SimpleIterateAitken(fn func(float64) float64, a, b, c float64, N int, tol f
 	for i := 0; i < N; i++ {
 		if (math.Abs(sol - c)) < tol {
 			err = true
-			return &sol, err
+			return sol, err
 		}
 		c = sol
 		sol = fn(c)
 		n2 = fn(sol)
 		sol = (n2*c - sol*sol) / (n2 - 2.0*sol + c)
 	}
-	return &sol, err
+	return sol, err
 }

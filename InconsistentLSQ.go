@@ -64,7 +64,7 @@ func InconsistentLSQ(A, b Matrix) (Matrix, bool) {
 		panic("Error in goNum.InconsistentLSQ: Solve error")
 	}
 	//转换切片为矩阵
-	sol := Slices1ToMatrix(*soltemp)
+	sol := Slices1ToMatrix(soltemp)
 	if sol.Rows != A.Columns {
 		panic("Error in goNum.InconsistentLSQ: Slice to matrix error")
 	}
