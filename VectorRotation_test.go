@@ -12,10 +12,10 @@
 输入   :
     u       初始向量，3x1
     angle   旋转角度，3x1，按绕x、y、z顺序，弧度
-    旋转顺序 []int
+    seq     旋转顺序 []int
 输出   :
     sol     解,向量
-    err     解出标志：false-未解出或达到步数上限；
+    err     解出标志：false-未解出或达到边界；
                      true-全部解出
 ------------------------------------------------------
 */
@@ -35,10 +35,10 @@ func VectorRotation(u, angle goNum.Matrix, seq []int) (goNum.Matrix, bool) {
 		输入   :
 		    u       初始向量，3x1
 		    angle   旋转角度，3x1，按绕x、y、z顺序，弧度
-		    旋转顺序 []int
+		    seq     旋转顺序 []int
 		输出   :
 		    sol     解,向量
-		    err     解出标志：false-未解出或达到步数上限；
+		    err     解出标志：false-未解出或达到边界；
 		                     true-全部解出
 	*/
 	//向量大小
