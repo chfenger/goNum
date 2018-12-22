@@ -109,7 +109,7 @@ go get github.com/chfenger/goNum
   - 解n阶线性方程组的Seidel迭代法
   - 解n阶线性方程组的SOR(逐次超松弛)迭代法
 
-- 解线性方程组
+- 解非线性方程组
   - 多元非线性方程组Seidel迭代
 
 - 数据拟合
