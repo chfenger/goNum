@@ -114,6 +114,13 @@ go get github.com/chfenger/goNum
 
 - 数据拟合
   - 多项式拟合
+  - 线性最小二乘拟合
+  - Bezier曲线拟合控制点
+
+- 误差评估
+  - 最大误差
+  - 平均误差
+  - 均方根误差
 
 - 常微分方程
   - 4步Adams外推（ODE）
