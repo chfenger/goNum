@@ -125,6 +125,7 @@ go get github.com/chfenger/goNum
 
 - 优化
   - 黄金分割法(Golden Section)求单峰单自变量极小值
+  - Fibonacci级数法求单峰单自变量极小值
 
 - 常微分方程
   - 4步Adams外推（ODE）
