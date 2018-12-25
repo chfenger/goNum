@@ -61,6 +61,7 @@ go get github.com/chfenger/goNum
   - 次幂扩展
   - 角度的三角函数和反三角函数
   - 向量在三维空间的旋转
+  - Fibonacci数列
 
 - 矩阵
   - 矩阵定义与操作
@@ -121,6 +122,9 @@ go get github.com/chfenger/goNum
   - 最大误差
   - 平均误差
   - 均方根误差
+
+- 优化
+  - 黄金分割法(Golden Section)求单峰单自变量极小值
 
 - 常微分方程
   - 4步Adams外推（ODE）
