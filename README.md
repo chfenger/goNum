@@ -33,7 +33,7 @@ go get github.com/chfenger/goNum
 ==========
 1. 包名'goNum'为算法库包;
 2. 包名'goNum_test'为测试库包（Benchmark）;
-3. 文件名'*_test.go'为测试文件名。
+3. 文件名'*_test.go'为测试文件名，其内容可作为算法包使用的参考手册。
 
 设计初衷
 =========
@@ -62,6 +62,7 @@ go get github.com/chfenger/goNum
   - 角度的三角函数和反三角函数
   - 向量在三维空间的旋转
   - Fibonacci数列
+  - 多项式求导
 
 - 矩阵
   - 矩阵定义与操作
@@ -124,8 +125,9 @@ go get github.com/chfenger/goNum
   - 均方根误差
 
 - 优化
-  - 黄金分割法(Golden Section)求单峰单自变量极小值
-  - Fibonacci级数法求单峰单自变量极小值
+  - 黄金分割法求单峰单自变量极小值
+  - Fibonacci搜索法求单峰单自变量极小值
+  - 单纯形法求多自变量函数极小值
 
 - 常微分方程
   - 4步Adams外推（ODE）
