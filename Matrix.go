@@ -4,6 +4,8 @@
 作者   : Black Ghost
 日期   : 2018-11-20
 版本   : 0.0.0
+         0.0.1 2018-12-11 增加切片与矩阵转换
+         0.0.2 2018-12-26 增加错误报告
 ------------------------------------------------------
     矩阵的创建及其操作创建及其简单操作/运算
 理论：
@@ -39,21 +41,33 @@ func findIndex(r, c int, A *Matrix) int {
 
 //设置指定行列的值
 func (A *Matrix) SetMatrix(r, c int, val float64) {
+	if (r >= A.Rows) || (c >= A.Columns) {
+		panic("Error in goNum.(*Matrix).SetMatrix: Out of range")
+	}
 	A.Data[findIndex(r, c, A)] = val
 }
 
 //获取指定行列的值
 func (A *Matrix) GetFromMatrix(r, c int) float64 {
+	if (r >= A.Rows) || (c >= A.Columns) {
+		panic("Error in goNum.(*Matrix).GetFromMatrix: Out of range")
+	}
 	return A.Data[findIndex(r, c, A)]
 }
 
 //获取指定行的值的切片
 func (A *Matrix) RowOfMatrix(i int) []float64 {
+	if i >= A.Rows {
+		panic("Error in goNum.(*Matrix).RowOfMatrix: Out of range")
+	}
 	return A.Data[findIndex(i, 0, A):findIndex(i, A.Columns, A)]
 }
 
 //获取指定列的值的切片
 func (A *Matrix) ColumnOfMatrix(j int) []float64 {
+	if j >= A.Columns {
+		panic("Error in goNum.(*Matrix).ColumnOfMatrix: Out of range")
+	}
 	col := make([]float64, A.Rows)
 	for i := 0; i < A.Rows; i++ {
 		col[i] = A.RowOfMatrix(i)[j]
