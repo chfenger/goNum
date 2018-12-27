@@ -59,7 +59,7 @@ func ODETrapezoid(fun func(float64, float64) float64, x0, y0, h, tol float64, n 
 	*/
 	//判断n
 	if n < 0 {
-		panic("Error in goNum.ODEEuler: n is not a positive value")
+		panic("Error in goNum.ODETrapezoid: n is not a positive value")
 	}
 
 	sol := ZeroMatrix(n+1, 2)
