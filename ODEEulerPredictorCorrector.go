@@ -53,7 +53,7 @@ func ODEEulerPredictorCorrector(fun func(float64, float64) float64, x0, y0, h fl
 	*/
 	//判断n
 	if n < 0 {
-		panic("Error in goNum.ODEEuler: n is not a positive value")
+		panic("Error in goNum.ODEEulerPredictorCorrector: n is not a positive value")
 	}
 
 	sol := ZeroMatrix(n+1, 2)
