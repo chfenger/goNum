@@ -138,6 +138,7 @@ go get github.com/chfenger/goNum
   - 二级二阶Runge-Kutta法
   - 四级四阶Runge-Kutta法
   - 四阶Runge-Kutta-Fehlberg变步长
+  - Heun法
 
 - 偏微分方程
   - 双曲型偏微分方程差分解法（第一种差分格式）
