@@ -139,6 +139,10 @@ go get github.com/chfenger/goNum
   - 四级四阶Runge-Kutta法
   - 四阶Runge-Kutta-Fehlberg变步长
   - Heun法
+  - Adams-Bashforth-Moulton预估校正法
+  - Milne-Simpson预估校正法
+  - Hamming预估校正法
+  - 差分法
 
 - 偏微分方程
   - 双曲型偏微分方程差分解法（第一种差分格式）
