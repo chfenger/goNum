@@ -6,6 +6,7 @@
 版本   : 0.0.0
          0.0.1 2018-12-11 增加切片与矩阵转换
          0.0.2 2018-12-26 增加错误报告
+         0.0.3 2018-12-27 增加追加行/列
 ------------------------------------------------------
     矩阵的创建及其操作创建及其简单操作/运算
 理论：
@@ -82,6 +83,39 @@ func (A *Matrix) Transpose() Matrix {
 		for j := 0; j < A.Columns; j++ {
 			B.SetMatrix(j, i, A.GetFromMatrix(i, j))
 		}
+	}
+	return B
+}
+
+//追加一行,另外一种方法是追加数据到A.Data，测试显示其速度表现更差
+func (A *Matrix) AppendRow(row []float64) Matrix {
+	//判断row长度是否等于A列数
+	if len(row) != A.Columns {
+		panic("Error in goNum.(*Matrix).AppendRow: Slice length error")
+	}
+	B := ZeroMatrix(A.Rows+1, A.Columns)
+	n := A.Rows * A.Columns
+	for i := 0; i < n; i++ {
+		B.Data[i] = A.Data[i]
+	}
+	for i := 0; i < len(row); i++ {
+		B.Data[n+i] = row[i]
+	}
+	return B
+}
+
+//追加一列，对于多次调用，建议组合使用转置和追加行
+func (A *Matrix) AppendColumn(col []float64) Matrix {
+	//判断row长度是否等于A列数
+	if len(col) != A.Rows {
+		panic("Error in goNum.(*Matrix).AppendColumn: Slice length error")
+	}
+	B := ZeroMatrix(A.Rows, A.Columns+1)
+	for i := 0; i < A.Rows; i++ {
+		for j := 0; j < A.Columns; j++ {
+			B.SetMatrix(i, j, A.GetFromMatrix(i, j))
+		}
+		B.SetMatrix(i, A.Columns, col[i])
 	}
 	return B
 }
