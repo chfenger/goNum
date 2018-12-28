@@ -1,6 +1,7 @@
+- 2018-12-27  增加Matrix方法：AppendRow和AppendColumn
 - 2018-12-26  修正Euler预估校正法和梯形法中一些不影响精度的问题
               修正Matrix方法中一些不影响结果的问题
-              增加Heun法求常微分方程
+              增加Heun法、Milne-Simpson预估校正、Adams-Bashforth-Moulton预估校正、Hamming预估校正、差分法求常微分方程
 - 2018-12-25  增加多项式求导，单纯形法求多自变量函数极小值
 - 2018-12-24  增加Fibonacci数列，黄金分割法、Fibonacci搜索法求极小值
 - 2018-12-23  增加线性最小二乘拟合，误差评估函数，Bezier曲线拟合控制点
