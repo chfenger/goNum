@@ -64,6 +64,10 @@ func PDEDiffEllipticalLL5(funy0, funyb, funx0, funxa func(float64) float64,
 	if (m < 1) || (n < 1) {
 		panic("Error in goNum.PDEDiffEllipticalLL5: Grid numbers error")
 	}
+	//判断初值维数
+	if (x0.Rows < 2) || (x0.Columns < 2) {
+		panic("Error in goNum.PDEDiffEllipticalLL5: Initial values error")
+	}
 
 	var err bool = false
 	sol := goNum.ZeroMatrix(m+1, n+1)                                    //行y变化，列x变化
@@ -159,7 +163,7 @@ func PDEDiffEllipticalLL5(funy0, funyb, funx0, funxa func(float64) float64,
 	tempBA = tempBA - hx*hx*funyb(x0.GetFromMatrix(0, 0)+hx*float64(n-1))
 	BA.SetMatrix((n-1)*(m-1-1)+n-1-1, 0, tempBA)
 	//求解矩阵方程
-	tempp, temperr := goNum.LEs_ECPE(Matrix2ToSlices(AA), Matrix1ToSlices(BA))
+	tempp, temperr := goNum.LEs_ECPE(goNum.Matrix2ToSlices(AA), goNum.Matrix1ToSlices(BA))
 	if temperr != true {
 		panic("Error in goNum.PDEDiffEllipticalLL5: Solve error")
 	}
