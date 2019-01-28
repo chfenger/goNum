@@ -156,7 +156,7 @@ go get github.com/chfenger/goNum
 
 作者
 =====
-详见AUTHOR.MD文件
+详见[AUTHOR.MD](AUTHOR.MD)文件
 
 许可证书
 =========
