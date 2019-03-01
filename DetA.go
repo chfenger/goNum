@@ -25,17 +25,17 @@ import (
 	"math"
 )
 
+// DetA 求矩阵行列式值的列主元消去法
 func DetA(a [][]float64) (float64, bool) {
 	/*
-		求矩阵行列式值的列主元消去法
-		输入   :
-		    a       矩阵
-		输出   :
-		    sol     解值，值
-		    err     解出标志：false-未解出或达到步数上限；
-		                     true-全部解出
+	       求矩阵行列式值的列主元消去法
+	   输入   :
+	       a       矩阵
+	   输出   :
+	       sol     解值，值
+	       err     解出标志：false-未解出或达到步数上限；
+	                        true-全部解出
 	*/
-
 	var sol float64 = 1.0
 	var err bool = false
 	var count0 int

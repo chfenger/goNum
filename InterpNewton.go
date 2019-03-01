@@ -51,6 +51,7 @@ func diffq_InterpNewton(A Matrix, k int) float64 {
 	return sol
 }
 
+// InterpNewton 计算x点n次Newton插值结果，拟合n+1个数据点
 func InterpNewton(A Matrix, xq float64) (float64, bool) {
 	/*
 		计算x点n次Newton插值结果，拟合n+1个数据点

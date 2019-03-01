@@ -36,6 +36,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// ODEAdamsEX 四步Adams外推公式，显式、线性，单个方程
 func ODEAdamsEX(fun func(goNum.Matrix, int) float64, x0 goNum.Matrix, xend float64, fn, n int) (goNum.Matrix, bool) {
 	/*
 		四步Adams外推公式，显式、线性，单个方程

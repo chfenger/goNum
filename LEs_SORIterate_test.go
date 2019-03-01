@@ -37,6 +37,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// LEs_SORIterate 解n阶线性方程组的SOR(逐次超松弛, successive over relaxation)迭代法
 func LEs_SORIterate(A, b, x0 goNum.Matrix, tol, omega float64, n int) ([]float64, bool) {
 	/*
 		解n阶线性方程组的SOR(逐次超松弛, successive over relaxation)迭代法

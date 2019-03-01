@@ -19,6 +19,7 @@
 
 package goNum
 
+// Min 向量第一个最小值及其位置
 func Min(a []float64) (float64, int, bool) {
 	/*
 		向量第一个最小值及其位置

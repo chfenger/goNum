@@ -142,6 +142,7 @@ func alphabetajx_InterpHermiteFunc(A Matrix, j int) (Matrix, Matrix) {
 	return alphajx, betajx
 }
 
+// InterpHermiteFunc 计算不高于2n+1次Hermite插值方程，拟合n+1个函数值数据点和对应的n+1个一阶导数点
 func InterpHermiteFunc(A Matrix) (Matrix, bool) {
 	/*
 		计算不高于2n+1次Hermite插值方程，拟合n+1个函数值数据点和对应的n+1个一阶导数点

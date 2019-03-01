@@ -51,6 +51,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// IntegralNewtonCotes 1-8级Newton-Cotes求积分公式
 func IntegralNewtonCotes(fun func(float64) float64, a, b float64, n int) (float64, bool) {
 	/*
 		1-8级Newton-Cotes求积分公式

@@ -74,6 +74,7 @@ func betajxq_InterpHermite(A goNum.Matrix, xq float64, j int) float64 {
 	return (xq - xj) * temp0 * temp0
 }
 
+// InterpHermite 计算x点不高于2n+1次Hermite插值结果，拟合n+1个函数值数据点和对应的n+1个一阶导数点
 func InterpHermite(A goNum.Matrix, xq float64) (float64, bool) {
 	/*
 		计算x点不高于2n+1次Hermite插值结果，拟合n+1个函数值数据点和对应的n+1个一阶导数点

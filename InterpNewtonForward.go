@@ -8,13 +8,13 @@
     计算x点n次Newton前向插值结果，拟合n+1个等距数据点
     Newton前向等距节点插值，满阶插值，即阶数为给定点数-1
 理论：
-                   ^y0           ^2y0
-    f(x) = f(x0) + ---(x-x0)/h + -----(x-x0)(x-x1) +
-                    h            2!h^2
+                   (-1)^y0             (-1)^2y0
+    f(x) = f(x0) + --------(x-x0)/h + ---------(x-x0)(x-x1) +
+                       h                 2!h^2
     ... +
-     ^ny0
-    -------(x-x0)(x-x1)...(x-x_(n-1))
-     n!h^n
+     (-1)^ny0
+    ----------(x-x0)(x-x1)...(x-x_(n-1))
+       n!h^n
     参考 李信真, 车刚明, 欧阳洁, 等. 计算方法. 西北工业大学
        出版社, 2000, pp 107-110.
 ------------------------------------------------------
@@ -41,6 +41,7 @@ func difff_InterpNewtonForward(A Matrix, k int) float64 {
 	return sol
 }
 
+// InterpNewtonForward 计算x点n次Newton前向插值结果，拟合n+1个等距数据点
 func InterpNewtonForward(A Matrix, xq float64) (float64, bool) {
 	/*
 		计算x点n次Newton前向插值结果，拟合n+1个等距数据点

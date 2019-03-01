@@ -44,7 +44,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
-//Bernstein Polynomial
+//BernsteinPoly Bernstein Polynomial
 func BernsteinPoly(i, N int) goNum.Matrix {
 	cni := goNum.Cnm(N, i)
 	sol := goNum.ZeroMatrix(N+1, 1)
@@ -68,6 +68,7 @@ func BernsteinPoly(i, N int) goNum.Matrix {
 	return sol
 }
 
+// FittingBezier Bezier曲线拟合控制点
 func FittingBezier(XY goNum.Matrix) (goNum.Matrix, bool) {
 	/*
 		Bezier曲线拟合控制点

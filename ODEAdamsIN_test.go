@@ -38,6 +38,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// ODEAdamsIN 四步Adams外推公式，显式、线性，单个方程
 func ODEAdamsIN(fun func(goNum.Matrix, int) float64, x0 goNum.Matrix, xend, tol float64, fn, n int) (goNum.Matrix, bool) {
 	/*
 		四步Adams外推公式，显式、线性，单个方程

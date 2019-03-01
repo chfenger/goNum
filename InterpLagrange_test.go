@@ -43,6 +43,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// InterpLagrange 求解n次拉格朗日Lagrange插值法拟合n+1个数据点
 func InterpLagrange(A goNum.Matrix, xq float64) (float64, bool) {
 	/*
 		求解n次拉格朗日Lagrange插值法拟合n+1个数据点

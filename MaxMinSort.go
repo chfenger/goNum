@@ -18,6 +18,7 @@
 
 package goNum
 
+// MaxMinSort 向量从大到小的排序
 func MaxMinSort(a []float64) ([]float64, bool) {
 	/*
 		向量从大到小的排序

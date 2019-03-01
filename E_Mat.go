@@ -18,17 +18,17 @@
 
 package goNum
 
+// E_Mat 返回n阶单位矩阵
 func E_Mat(n int) ([][]float64, bool) {
 	/*
-		返回n阶单位矩阵
-		输入   :
-		    n       阶数
-		输出   :
-		    sol     解值
-		    err     解出标志：false-未解出或达到步数上限；
-		                     true-全部解出
+	       返回n阶单位矩阵
+	   输入   :
+	       n       阶数
+	   输出   :
+	       sol     解值
+	       err     解出标志：false-未解出或达到步数上限；
+	                        true-全部解出
 	*/
-
 	sol := make([][]float64, n)
 	for i := 0; i < n; i++ {
 		sol[i] = make([]float64, n)

@@ -33,6 +33,7 @@
 
 package goNum
 
+// FittingLSQ 线性最小二乘拟合
 func FittingLSQ(XY Matrix) (Matrix, bool) {
 	/*
 		线性最小二乘拟合

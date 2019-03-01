@@ -22,6 +22,7 @@
 
 package goNum
 
+// LEs_Chasing 追赶法求解严格对角占优的三对角矩阵
 func LEs_Chasing(A, BA Matrix) (Matrix, bool) {
 	/*
 		追赶法求解严格对角占优的三对角矩阵

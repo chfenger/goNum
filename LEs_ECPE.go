@@ -26,6 +26,7 @@
 
 package goNum
 
+// LEs_ECPE 线性代数方程组的列主元消去法
 func LEs_ECPE(a [][]float64, b []float64) ([]float64, bool) {
 	/*
 		线性代数方程组的列主元消去法

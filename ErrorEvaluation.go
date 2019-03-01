@@ -37,6 +37,7 @@ import (
 	"math"
 )
 
+// MaxError 最大误差
 func MaxError(FY Matrix) float64 {
 	//最大误差
 	//判断FY的维数
@@ -53,6 +54,7 @@ func MaxError(FY Matrix) float64 {
 	return maxE
 }
 
+// MeanError 平均误差
 func MeanError(FY Matrix) float64 {
 	//平均误差
 	//判断FY的维数
@@ -68,6 +70,7 @@ func MeanError(FY Matrix) float64 {
 	return meanE
 }
 
+// RMSError 均方根误差
 func RMSError(FY Matrix) float64 {
 	//均方根误差
 	//判断FY的维数

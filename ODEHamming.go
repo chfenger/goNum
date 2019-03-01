@@ -38,6 +38,7 @@
 
 package goNum
 
+// ODEHamming Hamming预估校正方法
 func ODEHamming(fun func(float64, float64) float64, x0 Matrix, h float64, n int) (Matrix, bool) {
 	/*
 		Hamming预估校正方法

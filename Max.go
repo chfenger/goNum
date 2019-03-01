@@ -19,6 +19,7 @@
 
 package goNum
 
+// Max 向量第一个最大值及其位置
 func Max(a []float64) (float64, int, bool) {
 	/*
 		向量第一个最大值及其位置

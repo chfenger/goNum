@@ -38,6 +38,7 @@
 
 package goNum
 
+// ODEEulerPredictorCorrector 常微分方程的Euler（欧拉）预估校正解法
 func ODEEulerPredictorCorrector(fun func(float64, float64) float64, x0, y0, h float64, n int) (Matrix, bool) {
 	/*
 		常微分方程的Euler（欧拉）预估校正解法

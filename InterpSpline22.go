@@ -52,6 +52,7 @@
 
 package goNum
 
+// InterpSpline22 用节点处的二阶导数表示的三次样条插值函数, 二阶导数边界条件
 func InterpSpline22(A Matrix) (Matrix, bool) {
 	/*
 		用节点处的二阶导数表示的三次样条插值函数, 二阶导数边界条件

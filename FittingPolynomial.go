@@ -42,6 +42,7 @@ import (
 	"math"
 )
 
+// FittingPolynomial 多项式拟合
 func FittingPolynomial(xy Matrix, m int) (Matrix, float64, float64, bool) {
 	/*
 		多项式拟合

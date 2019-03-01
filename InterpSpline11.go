@@ -56,6 +56,7 @@ import (
 	"math"
 )
 
+// InterpSpline11 用节点处的一阶导数表示的三次样条插值函数, 一阶导数边界条件
 func InterpSpline11(A Matrix) (Matrix, bool) {
 	/*
 		用节点处的一阶导数表示的三次样条插值函数, 一阶导数边界条件

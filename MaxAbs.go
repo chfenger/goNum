@@ -23,6 +23,7 @@ import (
 	"math"
 )
 
+// MaxAbs 向量第一个绝对值最大值及其位置
 func MaxAbs(a []float64) (float64, int, bool) {
 	/*
 		向量第一个绝对值最大值及其位置

@@ -1,5 +1,5 @@
 // ODEAdamsBashforthMoulton_test
-/* 
+/*
 ------------------------------------------------------
 作者   : Black Ghost
 日期   : 2018-12-26
@@ -44,6 +44,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// ODEAdamsBashforthMoulton Adams-Bashforth-Moulton预估校正方法
 func ODEAdamsBashforthMoulton(fun func(float64, float64) float64, x0 goNum.Matrix, h float64, n int) (goNum.Matrix, bool) {
 	/*
 		Adams-Bashforth-Moulton预估校正方法

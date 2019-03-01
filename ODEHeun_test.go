@@ -42,6 +42,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// ODEHeun 常微分方程的Heun解法
 func ODEHeun(fun func(float64, float64) float64, x0, y0, h float64, n int) (goNum.Matrix, bool) {
 	/*
 		常微分方程的Heun解法

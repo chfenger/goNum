@@ -28,6 +28,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// DetA 求矩阵行列式值的列主元消去法
 func DetA(a [][]float64) (float64, bool) {
 	/*
 		求矩阵行列式值的列主元消去法

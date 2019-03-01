@@ -30,6 +30,7 @@
 
 package goNum
 
+// ODEAdamsEX 四步Adams外推公式，显式、线性，单个方程
 func ODEAdamsEX(fun func(Matrix, int) float64, x0 Matrix, xend float64, fn, n int) (Matrix, bool) {
 	/*
 		四步Adams外推公式，显式、线性，单个方程

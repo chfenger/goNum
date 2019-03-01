@@ -36,6 +36,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// LEs_JocobiIterate 解n阶线性方程组的Jocobi迭代法（简单迭代法）
 func LEs_JocobiIterate(A, b, x0 goNum.Matrix, tol float64, n int) ([]float64, bool) {
 	/*
 		解n阶线性方程组的Jocobi迭代法（简单迭代法）

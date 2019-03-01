@@ -23,6 +23,7 @@ import (
 	"math"
 )
 
+// MinAbs 向量第一个绝对值最小值及其位置
 func MinAbs(a []float64) (float64, int, bool) {
 	/*
 		向量第一个绝对值最小值及其位置

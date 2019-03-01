@@ -27,6 +27,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// LU_Doolittle 求矩阵Doolittlede LU分解
 func LU_Doolittle(A goNum.Matrix) (goNum.Matrix, goNum.Matrix, bool) {
 	/*
 		求矩阵Doolittlede LU分解

@@ -108,6 +108,7 @@ func omega0_InterpLagrangeFunc(A goNum.Matrix, k, n int) goNum.Matrix {
 	return B
 }
 
+// InterpLagrangeFunc 求解n次拉格朗日Lagrange插值方程系数，拟合n+1个数据点
 func InterpLagrangeFunc(A goNum.Matrix) (goNum.Matrix, bool) {
 	/*
 		求解n次拉格朗日Lagrange插值方程系数，拟合n+1个数据点

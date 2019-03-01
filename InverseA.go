@@ -21,6 +21,7 @@
 
 package goNum
 
+// InverseA 求矩阵逆的列主元消去法
 func InverseA(a [][]float64) ([][]float64, bool) {
 	/*
 		求矩阵逆的列主元消去法

@@ -32,6 +32,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// MatrixEigenPower 求解n阶矩阵A的主特征值（按模最大）及其特征向量
 func MatrixEigenPower(A, u0 goNum.Matrix, tol float64, n int) (float64, []float64, bool) {
 	/*
 		求解n阶矩阵A的主特征值（按模最大）及其特征向量

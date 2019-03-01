@@ -148,6 +148,7 @@ func alphabetajx_InterpHermiteFunc(A goNum.Matrix, j int) (goNum.Matrix, goNum.M
 	return alphajx, betajx
 }
 
+// InterpHermiteFunc 计算不高于2n+1次Hermite插值方程，拟合n+1个函数值数据点和对应的n+1个一阶导数点
 func InterpHermiteFunc(A goNum.Matrix) (goNum.Matrix, bool) {
 	/*
 		计算不高于2n+1次Hermite插值方程，拟合n+1个函数值数据点和对应的n+1个一阶导数点

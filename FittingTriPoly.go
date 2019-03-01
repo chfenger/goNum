@@ -40,6 +40,7 @@ import (
 	"math"
 )
 
+// FittingTriPoly 基于傅立叶（Fourier）级数的三角多项式拟合
 func FittingTriPoly(XY Matrix, M int) (Matrix, bool) {
 	/*
 		基于傅立叶（Fourier）级数的三角多项式拟合

@@ -33,6 +33,7 @@ import (
 	"math"
 )
 
+// LEs_SeidelIterate 解n阶线性方程组的Seidel迭代法
 func LEs_SeidelIterate(A, b, x0 Matrix, tol float64, n int) ([]float64, bool) {
 	/*
 		解n阶线性方程组的Seidel迭代法

@@ -54,6 +54,7 @@ import (
 	"math"
 )
 
+// IntegralRumberg Rumberg(龙贝格)求积分公式
 func IntegralRumberg(fun func(float64) float64, a, b, tol float64, Nn int) (float64, bool) {
 	/*
 		Rumberg(龙贝格)求积分公式

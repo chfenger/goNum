@@ -32,6 +32,7 @@
 
 package goNum
 
+// IntegralGaussLagendre 不超过8次的Gauss-Lagendre求积分公式
 func IntegralGaussLagendre(fun func(float64) float64, a, b float64, n int) (float64, bool) {
 	/*
 		不超过8次的Gauss-Lagendre求积分公式

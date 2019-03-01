@@ -102,6 +102,7 @@ func omega0_InterpLagrangeFunc(A Matrix, k, n int) Matrix {
 	return B
 }
 
+// InterpLagrangeFunc 求解n次拉格朗日Lagrange插值方程系数，拟合n+1个数据点
 func InterpLagrangeFunc(A Matrix) (Matrix, bool) {
 	/*
 		求解n次拉格朗日Lagrange插值方程系数，拟合n+1个数据点

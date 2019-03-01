@@ -24,6 +24,7 @@ package goNum
 
 import "math"
 
+// NormInf 求矩阵无穷范数
 func NormInf(A Matrix) (float64, bool) {
 	/*
 		求矩阵无穷范数

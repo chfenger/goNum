@@ -49,6 +49,7 @@
 
 package goNum
 
+// ODEDiff 差分方法求解常微分方程
 func ODEDiff(funp, funq, funr func(float64) float64, x0 Matrix, Nn int) (Matrix, bool) {
 	/*
 		差分方法求解常微分方程

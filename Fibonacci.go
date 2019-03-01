@@ -18,6 +18,7 @@
 
 package goNum
 
+// Fibonacci 求Fibonacci数列
 func Fibonacci(n int) int {
 	/*
 	   求Fibonacci数列

@@ -31,6 +31,7 @@ import (
 	"math"
 )
 
+// Norm 求向量p范数
 func Norm(A Matrix, p float64) (float64, bool) {
 	/*
 		求向量p范数

@@ -36,6 +36,7 @@
 
 package goNum
 
+// ODEEuler 常微分方程的Euler（欧拉）解法
 func ODEEuler(fun func(float64, float64) float64, x0, y0, h float64, n int) (Matrix, bool) {
 	/*
 		常微分方程的Euler（欧拉）解法

@@ -28,6 +28,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// LEs_Chasing 追赶法求解严格对角占优的三对角矩阵
 func LEs_Chasing(A, BA goNum.Matrix) (goNum.Matrix, bool) {
 	/*
 		追赶法求解严格对角占优的三对角矩阵

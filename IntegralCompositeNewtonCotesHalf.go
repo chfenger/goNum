@@ -53,6 +53,7 @@ import (
 	"math"
 )
 
+// IntegralCompositeNewtonCotesHalf 1-8级逐次分半复化Newton-Cotes求积分公式
 func IntegralCompositeNewtonCotesHalf(fun func(float64) float64, a, b, tol float64, n, Nmax int) (float64, bool) {
 	/*
 		1-8级逐次分半复化Newton-Cotes求积分公式

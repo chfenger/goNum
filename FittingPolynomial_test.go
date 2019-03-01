@@ -45,6 +45,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// FittingPolynomial 多项式拟合
 func FittingPolynomial(xy goNum.Matrix, m int) (goNum.Matrix, float64, float64, bool) {
 	/*
 		多项式拟合

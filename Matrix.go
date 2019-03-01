@@ -27,7 +27,7 @@ import (
 )
 
 //数据结构定义----------------------------------------+
-//定义Matrix数据类型
+// Matrix 定义Matrix数据类型
 type Matrix struct {
 	Rows, Columns int       //行数和列数
 	Data          []float64 //将矩阵中所有元素作为一维切片
@@ -40,7 +40,7 @@ func findIndex(r, c int, A *Matrix) int {
 	return r*A.Columns + c
 }
 
-//设置指定行列的值
+// SetMatrix 设置指定行列的值
 func (A *Matrix) SetMatrix(r, c int, val float64) {
 	if (r >= A.Rows) || (c >= A.Columns) {
 		panic("Error in goNum.(*Matrix).SetMatrix: Out of range")
@@ -48,7 +48,7 @@ func (A *Matrix) SetMatrix(r, c int, val float64) {
 	A.Data[findIndex(r, c, A)] = val
 }
 
-//获取指定行列的值
+// GetFromMatrix 获取指定行列的值
 func (A *Matrix) GetFromMatrix(r, c int) float64 {
 	if (r >= A.Rows) || (c >= A.Columns) {
 		panic("Error in goNum.(*Matrix).GetFromMatrix: Out of range")
@@ -56,7 +56,7 @@ func (A *Matrix) GetFromMatrix(r, c int) float64 {
 	return A.Data[findIndex(r, c, A)]
 }
 
-//获取指定行的值的切片
+// RowOfMatrix 获取指定行的值的切片
 func (A *Matrix) RowOfMatrix(i int) []float64 {
 	if i >= A.Rows {
 		panic("Error in goNum.(*Matrix).RowOfMatrix: Out of range")
@@ -64,7 +64,7 @@ func (A *Matrix) RowOfMatrix(i int) []float64 {
 	return A.Data[findIndex(i, 0, A):findIndex(i, A.Columns, A)]
 }
 
-//获取指定列的值的切片
+// ColumnOfMatrix 获取指定列的值的切片
 func (A *Matrix) ColumnOfMatrix(j int) []float64 {
 	if j >= A.Columns {
 		panic("Error in goNum.(*Matrix).ColumnOfMatrix: Out of range")
@@ -76,7 +76,7 @@ func (A *Matrix) ColumnOfMatrix(j int) []float64 {
 	return col
 }
 
-//矩阵转置
+// Transpose 矩阵转置
 func (A *Matrix) Transpose() Matrix {
 	B := ZeroMatrix(A.Columns, A.Rows)
 	for i := 0; i < A.Rows; i++ {
@@ -87,7 +87,7 @@ func (A *Matrix) Transpose() Matrix {
 	return B
 }
 
-//追加一行,另外一种方法是追加数据到A.Data，测试显示其速度表现更差
+// AppendRow 追加一行,另外一种方法是追加数据到A.Data，测试显示其速度表现更差
 func (A *Matrix) AppendRow(row []float64) Matrix {
 	//判断row长度是否等于A列数
 	if len(row) != A.Columns {
@@ -104,7 +104,7 @@ func (A *Matrix) AppendRow(row []float64) Matrix {
 	return B
 }
 
-//追加一列，对于多次调用，建议组合使用转置和追加行
+// AppendColumn 追加一列，对于多次调用，建议组合使用转置和追加行
 func (A *Matrix) AppendColumn(col []float64) Matrix {
 	//判断row长度是否等于A列数
 	if len(col) != A.Rows {
@@ -120,7 +120,7 @@ func (A *Matrix) AppendColumn(col []float64) Matrix {
 	return B
 }
 
-//格式输出
+// PrintMatrix 格式输出
 func (A *Matrix) PrintMatrix() {
 	//求出最长字符
 	colwidstr := make([]string, A.Columns)
@@ -151,12 +151,12 @@ func (A *Matrix) PrintMatrix() {
 }
 
 //矩阵初始化-----------------------------------------+
-//r行c列零矩阵
+// ZeroMatrix r行c列零矩阵
 func ZeroMatrix(r, c int) Matrix {
 	return Matrix{r, c, make([]float64, r*c)}
 }
 
-//n阶单位矩阵
+// IdentityE n阶单位矩阵
 func IdentityE(n int) Matrix {
 	A := ZeroMatrix(n, n)
 	for i := 0; i < len(A.Data); i += (n + 1) {
@@ -165,7 +165,7 @@ func IdentityE(n int) Matrix {
 	return A
 }
 
-//以已有数据创建r行c列矩阵
+// NewMatrix 以已有数据创建r行c列矩阵
 func NewMatrix(r, c int, data []float64) Matrix {
 	if len(data) != r*c {
 		panic("goNum.Matrix.New: Length of data does not matched r rows and c columns")
@@ -175,7 +175,7 @@ func NewMatrix(r, c int, data []float64) Matrix {
 	return A
 }
 
-//一维切片转为矩阵(列向量)
+// Slices1ToMatrix 一维切片转为矩阵(列向量)
 func Slices1ToMatrix(s []float64) Matrix {
 	A := ZeroMatrix(len(s), 1)
 	for i := 0; i < A.Rows; i++ {
@@ -184,7 +184,7 @@ func Slices1ToMatrix(s []float64) Matrix {
 	return A
 }
 
-//二维切片转为矩阵
+// Slices2ToMatrix 二维切片转为矩阵
 func Slices2ToMatrix(s [][]float64) Matrix {
 	row := len(s)
 	col := len(s[0])
@@ -197,7 +197,7 @@ func Slices2ToMatrix(s [][]float64) Matrix {
 	return A
 }
 
-//列向量转为一维切片
+// Matrix1ToSlices 列向量转为一维切片
 func Matrix1ToSlices(A Matrix) []float64 {
 	s := make([]float64, A.Rows)
 	for i := 0; i < A.Rows; i++ {
@@ -206,7 +206,7 @@ func Matrix1ToSlices(A Matrix) []float64 {
 	return s
 }
 
-//二维矩阵转为二维切片
+// Matrix2ToSlices 二维矩阵转为二维切片
 func Matrix2ToSlices(A Matrix) [][]float64 {
 	s := make([][]float64, A.Rows)
 	for i := 0; i < A.Rows; i++ {
@@ -219,7 +219,7 @@ func Matrix2ToSlices(A Matrix) [][]float64 {
 }
 
 //矩阵运算------------------------------------------+
-//矩阵相加
+// AddMatrix 矩阵相加
 func AddMatrix(A, B Matrix) Matrix {
 	if (A.Rows != B.Rows) || (A.Columns != B.Columns) {
 		panic("goNum.Matrix.Add: A and B does not matched")
@@ -233,7 +233,7 @@ func AddMatrix(A, B Matrix) Matrix {
 	return AaddB
 }
 
-//矩阵相减
+// SubMatrix 矩阵相减
 func SubMatrix(A, B Matrix) Matrix {
 	if (A.Rows != B.Rows) || (A.Columns != B.Columns) {
 		panic("goNum.Matrix.Sub: A and B does not matched")
@@ -247,7 +247,7 @@ func SubMatrix(A, B Matrix) Matrix {
 	return AsubB
 }
 
-//矩阵数乘
+// NumProductMatrix 矩阵数乘
 func NumProductMatrix(A Matrix, c float64) Matrix {
 	cA := ZeroMatrix(A.Rows, A.Columns)
 	for i := 0; i < len(cA.Data); i++ {
@@ -256,7 +256,7 @@ func NumProductMatrix(A Matrix, c float64) Matrix {
 	return cA
 }
 
-//矩阵点乘
+// DotPruduct 矩阵点乘
 func DotPruduct(A, B Matrix) Matrix {
 	if A.Columns != B.Rows {
 		panic("goNum.Matrix.DotPruduct: A and B does not matched")
@@ -272,7 +272,7 @@ func DotPruduct(A, B Matrix) Matrix {
 	return AdotB
 }
 
-//向量叉乘，得到垂直于两个向量所在平面的向量
+// CrossVector 向量叉乘，得到垂直于两个向量所在平面的向量
 func CrossVector(a, b []float64) []float64 {
 	if (len(a) != 3) || (len(b) != 3) {
 		panic("goNum.Matrix.CrossVector: vector a or b length is not 3")

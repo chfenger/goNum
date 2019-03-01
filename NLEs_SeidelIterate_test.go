@@ -17,6 +17,10 @@
 
     Jk*dPk = -Fk
     P_(k+1) = Pk+dPk
+
+    参考：John H. Mathews and Kurtis D. Fink. Numerical
+         methods using MATLAB, 4th ed. Pearson
+         Education, 2004. ss 3.7
 ------------------------------------------------------
 输入   :
     funs    方程组，nx1
@@ -40,6 +44,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// NLEs_SeidelIterate 多元非线性方程组Seidel迭代
 func NLEs_SeidelIterate(funs, J func(goNum.Matrix) goNum.Matrix, x0 goNum.Matrix,
 	tol float64, n int) (goNum.Matrix, bool) {
 	/*

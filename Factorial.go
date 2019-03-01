@@ -18,6 +18,7 @@
 
 package goNum
 
+// Factorial 计算自然数n的阶乘
 func Factorial(n int) int {
 	//判断n
 	if n < 0 {

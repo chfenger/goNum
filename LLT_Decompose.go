@@ -26,6 +26,7 @@ import (
 	"math"
 )
 
+// LLT_Decompose 求对称正定矩阵的平方根分解法
 func LLT_Decompose(A Matrix) (Matrix, bool) {
 	/*
 		求对称正定矩阵的平方根分解法

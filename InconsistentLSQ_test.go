@@ -38,6 +38,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// InconsistentLSQ 求解矛盾方程组的最小二乘法（Least Square Method）
 func InconsistentLSQ(A, b goNum.Matrix) (goNum.Matrix, bool) {
 	/*
 		求解矛盾方程组的最小二乘法（Least Square Method）

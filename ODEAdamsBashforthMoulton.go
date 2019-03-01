@@ -17,7 +17,7 @@
                     24
 
     步长 h < 0.75/|fy(x,y)|
-     
+
     四阶精度
 
     参考：John H. Mathews and Kurtis D. Fink. Numerical
@@ -38,6 +38,7 @@
 
 package goNum
 
+// ODEAdamsBashforthMoulton Adams-Bashforth-Moulton预估校正方法
 func ODEAdamsBashforthMoulton(fun func(float64, float64) float64, x0 Matrix, h float64, n int) (Matrix, bool) {
 	/*
 		Adams-Bashforth-Moulton预估校正方法

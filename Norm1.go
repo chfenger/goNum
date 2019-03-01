@@ -26,6 +26,7 @@ import (
 	"math"
 )
 
+// Norm1 求矩阵1范数
 func Norm1(A Matrix) (float64, bool) {
 	/*
 		求矩阵1范数

@@ -39,6 +39,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// FittingLSQ 线性最小二乘拟合
 func FittingLSQ(XY goNum.Matrix) (goNum.Matrix, bool) {
 	/*
 		线性最小二乘拟合

@@ -127,6 +127,7 @@ func sum2Else_MatrixEigenClassicalJacobi(A Matrix) float64 {
 	return 2.0 * sum2
 }
 
+// MatrixEigenClassicalJacobi 求解n阶对称矩阵A的全部特征值及其特征向量，经典雅可比法
 func MatrixEigenClassicalJacobi(A Matrix, tol float64, n int) (Matrix, Matrix, bool) {
 	/*
 		求解n阶对称矩阵A的全部特征值及其特征向量，经典雅可比法

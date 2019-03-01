@@ -36,6 +36,7 @@ import (
 	"testing"
 )
 
+// NewtonIterate 牛顿迭代求解非线性方程 f(x)=0 在区间[a, b]内的根
 func NewtonIterate(fn, fn1 func(float64) float64, a, b, c float64, N int, tol float64) (float64, bool) {
 	/*
 		牛顿迭代求解非线性方程 f(x)=0 在区间[a, b]内的根

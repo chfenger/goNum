@@ -33,6 +33,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// Muller Muller法求解非线性方程f(x)=0的解
 func Muller(fun func(float64) float64, x0 goNum.Matrix, tol float64, n int) (float64, bool) {
 	/*
 	   Muller法求解非线性方程f(x)=0的解

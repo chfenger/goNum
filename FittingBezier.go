@@ -38,7 +38,7 @@
 
 package goNum
 
-//Bernstein Polynomial
+//BernsteinPoly Bernstein Polynomial
 func BernsteinPoly(i, N int) Matrix {
 	cni := Cnm(N, i)
 	sol := ZeroMatrix(N+1, 1)
@@ -62,6 +62,7 @@ func BernsteinPoly(i, N int) Matrix {
 	return sol
 }
 
+// FittingBezier Bezier曲线拟合控制点
 func FittingBezier(XY Matrix) (Matrix, bool) {
 	/*
 		Bezier曲线拟合控制点

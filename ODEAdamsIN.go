@@ -35,6 +35,7 @@ import (
 	"math"
 )
 
+// ODEAdamsIN 四步Adams外推公式，显式、线性，单个方程
 func ODEAdamsIN(fun func(Matrix, int) float64, x0 Matrix, xend, tol float64, fn, n int) (Matrix, bool) {
 	/*
 		四步Adams外推公式，显式、线性，单个方程

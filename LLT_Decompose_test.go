@@ -29,6 +29,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// LLT_Decompose 求对称正定矩阵的平方根分解法
 func LLT_Decompose(A goNum.Matrix) (goNum.Matrix, bool) {
 	/*
 		求对称正定矩阵的平方根分解法

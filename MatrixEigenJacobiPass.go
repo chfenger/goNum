@@ -25,6 +25,7 @@
 
 package goNum
 
+// MatrixEigenJacobiPass 求解n阶对称矩阵A的全部特征值及其特征向量，雅可比过关法
 func MatrixEigenJacobiPass(A Matrix, tol float64, n int) (Matrix, Matrix, bool) {
 	/*
 		求解n阶对称矩阵A的全部特征值及其特征向量，雅可比过关法

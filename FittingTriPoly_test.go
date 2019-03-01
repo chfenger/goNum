@@ -43,6 +43,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// FittingTriPoly 基于傅立叶（Fourier）级数的三角多项式拟合
 func FittingTriPoly(XY goNum.Matrix, M int) (goNum.Matrix, bool) {
 	/*
 		基于傅立叶（Fourier）级数的三角多项式拟合

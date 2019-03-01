@@ -55,6 +55,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// ODEDiff 差分方法求解常微分方程
 func ODEDiff(funp, funq, funr func(float64) float64, x0 goNum.Matrix, Nn int) (goNum.Matrix, bool) {
 	/*
 		差分方法求解常微分方程

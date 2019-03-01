@@ -21,6 +21,7 @@
 
 package goNum
 
+// LU_Doolittle 求矩阵Doolittlede LU分解
 func LU_Doolittle(A Matrix) (Matrix, Matrix, bool) {
 	/*
 		求矩阵Doolittlede LU分解
