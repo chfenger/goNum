@@ -43,6 +43,7 @@ import (
 	"math"
 )
 
+// ODETrapezoid 常微分方程的梯形解法
 func ODETrapezoid(fun func(float64, float64) float64, x0, y0, h, tol float64, n int) (Matrix, bool) {
 	/*
 		常微分方程的梯形解法

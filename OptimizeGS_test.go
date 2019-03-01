@@ -41,6 +41,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// OptimizeGS 黄金分割法(Golden Section)求单峰单自变量极小值
 func OptimizeGS(fun func(float64) float64, a, b, tol float64, N int) (float64, bool) {
 	/*
 		黄金分割法(Golden Section)求单峰单自变量极小值

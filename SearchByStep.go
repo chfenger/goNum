@@ -1,3 +1,7 @@
+// goNum 是一个开源的go语言数值算法库[goNum is an open 
+// numerical library purely based on go programming language]
+package goNum
+
 // SearchByStep
 /*
 ------------------------------------------------------
@@ -18,11 +22,12 @@
     err     解出标志：false-未全部解出；true-全部解出
 ------------------------------------------------------
 */
-package goNum
 
 import "math"
 
-func SearchByStep(fn func(float64) float64, a, b float64, N int, tol float64) ([]float64, bool) {
+// SearchByStep 搜索法来求解连续、单自变量函数指定有限区间上的解
+func SearchByStep(fn func(float64) float64, a, b float64,
+	N int, tol float64) ([]float64, bool) {
 	/*
 		搜索法来求解连续、单自变量函数指定有限区间上的解
 		输入   :

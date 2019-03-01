@@ -22,7 +22,7 @@ import (
 	"math"
 )
 
-//浮点数的整数次幂
+// PowFInt 浮点数的整数次幂
 func PowFInt(a float64, n int) float64 {
 	/*
 	   计算浮点数的整数次幂
@@ -45,7 +45,7 @@ func PowFInt(a float64, n int) float64 {
 	return sol
 }
 
-//整数的浮点数次幂
+// PowIF 整数的浮点数次幂
 func PowIF(a int, n float64) float64 {
 	/*
 	   计算整数的浮点数次幂
@@ -57,7 +57,7 @@ func PowIF(a int, n float64) float64 {
 	return math.Pow(float64(a), n)
 }
 
-//整数的整数次幂，输出整数
+// PowIInt 整数的整数次幂，输出整数
 func PowIInt(a, n int) int {
 	/*
 	   计算整数的整数次幂，输出整数
@@ -80,7 +80,7 @@ func PowIInt(a, n int) int {
 	return sol
 }
 
-//整数的整数次幂，输出浮点
+// PowIIntF 整数的整数次幂，输出浮点
 func PowIIntF(a, n int) float64 {
 	/*
 	   计算整数的整数次幂，输出浮点

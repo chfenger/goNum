@@ -19,7 +19,7 @@
     fn      方程个数
     n       最大迭代步数
 输出   :
-    B       解向量
+    sol     解向量
     err     解出标志：false-未解出或达到步数上限；
                      true-全部解出
 ------------------------------------------------------
@@ -27,7 +27,9 @@
 
 package goNum
 
-func RK44(fun func(Matrix, int) float64, x0 Matrix, xend float64, fn, n int) (Matrix, bool) {
+// RK44 四级四阶Runge-Kutta法求解常微分方程组
+func RK44(fun func(Matrix, int) float64, x0 Matrix,
+	xend float64, fn, n int) (Matrix, bool) {
 	/*
 		四级四阶Runge-Kutta法求解常微分方程组
 		输入   :
@@ -37,7 +39,7 @@ func RK44(fun func(Matrix, int) float64, x0 Matrix, xend float64, fn, n int) (Ma
 		    fn      方程个数
 		    n       最大迭代步数
 		输出   :
-		    B       解向量
+		    sol     解向量
 		    err     解出标志：false-未解出或达到步数上限；
 		                     true-全部解出
 	*/

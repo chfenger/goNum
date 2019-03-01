@@ -45,6 +45,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// OptimizeSimplex Nelder-Mead单纯形法求解多自变量函数极小值
 func OptimizeSimplex(fun func(goNum.Matrix) float64, x0 goNum.Matrix, tol float64, Nn int) (goNum.Matrix, bool) {
 	/*
 		Nelder-Mead单纯形法求解多自变量函数极小值

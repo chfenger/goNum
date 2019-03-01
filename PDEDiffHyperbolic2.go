@@ -45,6 +45,7 @@
 
 package goNum
 
+// PDEDiffHyperbolic2 求解双曲型偏微分方程的差分解法（第二种差分格式，t=0时微分方程须成立）
 func PDEDiffHyperbolic2(funphi, funpsi, funu1, funu2 func(float64) float64,
 	x0 Matrix, A, B float64, m, n int) (Matrix, bool) {
 	/*

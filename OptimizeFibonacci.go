@@ -37,6 +37,7 @@ package goNum
 
 import "math"
 
+// OptimizeFibonacci Fibonacci搜索法求单峰单自变量极小值
 func OptimizeFibonacci(fun func(float64) float64, a, b, tol float64) (float64, bool) {
 	/*
 		Fibonacci搜索法求单峰单自变量极小值

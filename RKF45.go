@@ -32,7 +32,9 @@ import (
 	"math"
 )
 
-func RKF45(fun func(Matrix, int) float64, x0 Matrix, xend, tol float64, fn, n int) (Matrix, bool) {
+// RKF45 四级五阶变步长Runge-Kutta法求解常微分方程组
+func RKF45(fun func(Matrix, int) float64, x0 Matrix,
+	xend, tol float64, fn, n int) (Matrix, bool) {
 	/*
 		四级五阶变步长Runge-Kutta法求解常微分方程组
 		输入   :

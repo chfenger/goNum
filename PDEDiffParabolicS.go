@@ -38,8 +38,9 @@
        = [p(h),p(2h),...,p((m-1)h)]'
 
 
-    参考 李信真, 车刚明, 欧阳洁, 等. 计算方法. 西北工业大学
-       出版社, 2000, pp 214-215.
+    参考 John H. Mathews and Kurtis D. Fink. Numerical
+         methods using MATLAB, 4th ed. Pearson
+         Education, 2004. ss 10.2.3.
 ------------------------------------------------------
 输入   :
     funp, funu1, funu2   边界函数
@@ -55,6 +56,7 @@
 
 package goNum
 
+// PDEDiffParabolicS 求解抛物型偏微分方程的差分解法（隐式）
 func PDEDiffParabolicS(funp, funu1, funu2 func(float64) float64, x0 Matrix, A, B float64, m, n int) (Matrix, bool) {
 	/*
 	   求解抛物型偏微分方程的差分解法（隐式）

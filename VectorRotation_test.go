@@ -29,6 +29,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// VectorRotation 向量在三维空间的旋转
 func VectorRotation(u, angle goNum.Matrix, seq []int) (goNum.Matrix, bool) {
 	/*
 		向量在三维空间的旋转

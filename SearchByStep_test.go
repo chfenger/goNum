@@ -25,7 +25,9 @@ import (
 	"testing"
 )
 
-func SearchByStep(fn func(float64) float64, a, b float64, N int, tol float64) ([]float64, bool) {
+// SearchByStep 搜索法来求解连续、单自变量函数指定有限区间上的解
+func SearchByStep(fn func(float64) float64, a, b float64,
+	N int, tol float64) ([]float64, bool) {
 	/*
 		搜索法来求解连续、单自变量函数指定有限区间上的解
 		输入   :

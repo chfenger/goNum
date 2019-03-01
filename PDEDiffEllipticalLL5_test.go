@@ -47,6 +47,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// PDEDiffEllipticalLL5 求解椭圆型偏微分方程（Laplace）的差分解法（五点格式）
 func PDEDiffEllipticalLL5(funy0, funyb, funx0, funxa func(float64) float64,
 	x0 goNum.Matrix, n, m int) (goNum.Matrix, bool) {
 	/*

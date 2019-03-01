@@ -38,6 +38,7 @@
 
 package goNum
 
+// ODEMilneSimpson Milne-Simpson预估校正方法
 func ODEMilneSimpson(fun func(float64, float64) float64, x0 Matrix, h float64, n int) (Matrix, bool) {
 	/*
 		Milne-Simpson预估校正方法

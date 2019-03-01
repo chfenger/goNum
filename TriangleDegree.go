@@ -24,33 +24,35 @@ import (
 )
 
 //三角函数
-//角度的正弦
+
+// Sind 角度的正弦
 func Sind(x float64) float64 {
 	return math.Sin(x * math.Pi / 180.0)
 }
 
-//角度的余弦
+// Cosd 角度的余弦
 func Cosd(x float64) float64 {
 	return math.Cos(x * math.Pi / 180.0)
 }
 
-//角度的正切
+// Tand 角度的正切
 func Tand(x float64) float64 {
 	return math.Tan(x * math.Pi / 180.0)
 }
 
 //反三角函数
-//反正弦的角度
+
+// Asind 反正弦的角度
 func Asind(y float64) float64 {
 	return 180.0 * math.Asin(y) / math.Pi
 }
 
-//反余弦的角度
+// Acosd 反余弦的角度
 func Acosd(y float64) float64 {
 	return 180.0 * math.Acos(y) / math.Pi
 }
 
-//反正切的角度
+// Atand 反正切的角度
 func Atand(y float64) float64 {
 	return 180.0 * math.Atan(y) / math.Pi
 }

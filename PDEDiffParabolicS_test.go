@@ -61,6 +61,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// PDEDiffParabolicS 求解抛物型偏微分方程的差分解法（隐式）
 func PDEDiffParabolicS(funp, funu1, funu2 func(float64) float64, x0 goNum.Matrix, A, B float64, m, n int) (goNum.Matrix, bool) {
 	/*
 	   求解抛物型偏微分方程的差分解法（隐式）

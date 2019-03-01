@@ -27,7 +27,9 @@
 
 package goNum
 
-func RK22(fun func(Matrix, int) float64, x0 Matrix, xend float64, fn, n int) (Matrix, bool) {
+// RK22 二级二阶Runge-Kutta法求解常微分方程组
+func RK22(fun func(Matrix, int) float64, x0 Matrix,
+	xend float64, fn, n int) (Matrix, bool) {
 	/*
 		二级二阶Runge-Kutta法求解常微分方程组
 		输入   :

@@ -42,6 +42,7 @@ import (
 	"math"
 )
 
+// OptimizeSimplex Nelder-Mead单纯形法求解多自变量函数极小值
 func OptimizeSimplex(fun func(Matrix) float64, x0 Matrix, tol float64, Nn int) (Matrix, bool) {
 	/*
 		Nelder-Mead单纯形法求解多自变量函数极小值

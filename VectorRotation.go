@@ -26,6 +26,7 @@ import (
 	"math"
 )
 
+// VectorRotation 向量在三维空间的旋转
 func VectorRotation(u, angle Matrix, seq []int) (Matrix, bool) {
 	/*
 		向量在三维空间的旋转

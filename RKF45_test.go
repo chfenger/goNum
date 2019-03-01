@@ -35,7 +35,9 @@ import (
 	"github.com/chfenger/goNum"
 )
 
-func RKF45(fun func(goNum.Matrix, int) float64, x0 goNum.Matrix, xend, tol float64, fn, n int) (goNum.Matrix, bool) {
+// RKF45 四级五阶变步长Runge-Kutta法求解常微分方程组
+func RKF45(fun func(goNum.Matrix, int) float64, x0 goNum.Matrix,
+	xend, tol float64, fn, n int) (goNum.Matrix, bool) {
 	/*
 		四级五阶变步长Runge-Kutta法求解常微分方程组
 		输入   :

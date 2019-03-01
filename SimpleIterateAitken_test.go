@@ -43,7 +43,9 @@ import (
 	"testing"
 )
 
-func SimpleIterateAitken(fn func(float64) float64, a, b, c float64, N int, tol float64) (float64, bool) {
+// SimpleIterateAitken 简单迭代求解类x=g(x)方程的解 xn+1=g(xn)
+func SimpleIterateAitken(fn func(float64) float64, a, b, c float64,
+	N int, tol float64) (float64, bool) {
 	/*
 		简单迭代求解类x=g(x)方程的解 xn+1=g(xn)
 		输入   :

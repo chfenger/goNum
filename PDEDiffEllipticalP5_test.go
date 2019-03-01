@@ -47,6 +47,7 @@ import (
 	"github.com/chfenger/goNum"
 )
 
+// PDEDiffEllipticalP5 求解椭圆型偏微分方程（Poisson）的差分解法（五点格式）
 func PDEDiffEllipticalP5(funy0, funyb, funx0, funxa func(float64) float64,
 	fung func(float64, float64) float64, x0 goNum.Matrix, n, m int) (goNum.Matrix, bool) {
 	/*

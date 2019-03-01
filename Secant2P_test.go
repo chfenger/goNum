@@ -34,7 +34,9 @@ import (
 	"testing"
 )
 
-func Secant2P(fn func(float64) float64, a, b float64, N int, tol float64) (float64, bool) {
+// Secant2P 双点弦截法求解方程 f(x)=0 在区间[a, b]内的根
+func Secant2P(fn func(float64) float64, a, b float64,
+	N int, tol float64) (float64, bool) {
 	/*
 		双点弦截法求解方程 f(x)=0 在区间[a, b]内的根
 		输入   :

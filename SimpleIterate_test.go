@@ -37,7 +37,9 @@ import (
 	"testing"
 )
 
-func SimpleIterate(fn func(float64) float64, a, b, c float64, N int, tol float64) (float64, bool) {
+// SimpleIterate 简单迭代求解类x=g(x)方程的解 xn+1=g(xn)
+func SimpleIterate(fn func(float64) float64, a, b, c float64,
+	N int, tol float64) (float64, bool) {
 	/*
 		简单迭代求解类x=g(x)方程的解 xn+1=g(xn)
 		输入   :
