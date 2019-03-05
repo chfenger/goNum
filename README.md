@@ -154,9 +154,15 @@ go get github.com/chfenger/goNum
   - 椭圆型偏微分方程(Poisson)的差分解法（五点格式）
   - 椭圆型偏微分方程(Helmholtz)的差分解法（五点格式）
 
+- 排序
+  - 冒泡排序
+  - 选择排序
+  - 插入排序
+  - 希尔（Shell）排序
+
 作者
 =====
-详见[AUTHOR.MD](AUTHOR.MD)文件
+详见AUTHOR.MD文件
 
 许可证书
 =========
