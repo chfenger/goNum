@@ -64,6 +64,11 @@ go get github.com/chfenger/goNum
   - Fibonacci数列
   - 多项式求导
 
+- 数据结构
+  - 单向链表
+  - 双向链表
+  - 树
+
 - 矩阵
   - 矩阵定义与操作
   - 求矩阵行列式的列主元消去法
@@ -118,6 +123,7 @@ go get github.com/chfenger/goNum
   - 多项式拟合
   - 线性最小二乘拟合
   - Bezier曲线拟合控制点
+  - 基于傅立叶（Fourier）级数的三角多项式拟合
 
 - 误差评估
   - 最大误差
