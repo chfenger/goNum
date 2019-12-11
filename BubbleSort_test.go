@@ -59,7 +59,7 @@ func BubbleSort(in goNum.Matrix) (goNum.Matrix, bool) {
 	for i := 0; i < n; i++ {
 		sol.Data[i] = in.Data[i]
 	}
-	//排序开始
+	//排序开始, 方法1
 	for i := 0; i < n-1; i++ {
 		for j := 0; j < n-i-1; j++ {
 			if sol.Data[j] > sol.Data[j+1] {
@@ -67,6 +67,16 @@ func BubbleSort(in goNum.Matrix) (goNum.Matrix, bool) {
 			}
 		}
 	}
+	// 方法2
+	// for isSort {
+	// 	isSort = false
+	// 	for j := 0; j < n-1; j++ {
+	// 		if sol.Data[j] > sol.Data[j+1] {
+	// 			sol.Data[j], sol.Data[j+1] = sol.Data[j+1], sol.Data[j]
+	// 			isSort = true
+	// 		}
+	// 	}
+	// }
 
 	err = true
 	return sol, err
