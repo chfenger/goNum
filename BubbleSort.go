@@ -48,7 +48,7 @@ func BubbleSort(in Matrix) (Matrix, bool) {
 	n := in.Columns
 	sol := ZeroMatrix(1, n)
 	var err bool = false
-	var isSort bool = true
+	//var isSort bool = true
 
 	//初始化sol
 	for i := 0; i < n; i++ {
